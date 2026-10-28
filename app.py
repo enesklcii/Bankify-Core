@@ -1,6 +1,6 @@
 import random
 
-class BankMusterisi:
+class BankaMusterisi:
     def __init__(self, isim, soyisim, aylik_gelir):
         self.isim = isim
         self.soyisim = soyisim
@@ -37,22 +37,45 @@ class BankMusterisi:
             self.kredi_skoru -= 50
             self.bakiye_sorgula()
 
-# DÜZELTİLEN KISIM: Bu blok artık tamamen sola dayalı, yani fonksiyonun dışında!
+    # YENİ ÖZELLİK: Havale / EFT (Para Transferi) Fonksiyonu
+    def para_gonder(self, alici_musteri, miktar):
+        print(f"\n[TRANSFER] {self.isim} {self.soyisim} -> {alici_musteri.isim} {alici_musteri.soyisim} hesabına {miktar} TL gönderiliyor...")
+        
+        # Kontrol 1: Gönderilmek istenen miktar sıfırdan büyük mü?
+        if miktar <= 0:
+            print("[HATA] Geçersiz transfer miktarı!")
+            
+        # Kontrol 2: Gönderen kişinin hesabında o kadar para var mı?
+        elif self.bakiye < miktar:
+            print(f"[RED] Yetersiz Bakiye! Transfer gerçekleştirilemedi.")
+            print(f"-> Eksik Miktar: {miktar - self.bakiye} TL")
+            
+        # Şartlar tamam ise transferi yap
+        else:
+            self.bakiye -= miktar            # Parayı gönderenin bakiyesinden düş
+            alici_musteri.bakiye += miktar    # Parayı alıcının bakiyesine ekle
+            print("[BAŞARILI] Para transferi güvenle tamamlandı.")
+            
+            # İşlem sonrası iki tarafın da son durumunu ekrana yazdır
+            self.bakiye_sorgula()
+            alici_musteri.bakiye_sorgula()
+
+
+# Yeni Test Alanı
 if __name__ == "__main__":
     print("==========================================")
     print("== Bankify Core Sistemine Hoş Geldiniz ==")
     print("==========================================")
 
-    # Yeni müşteri oluşturuluyor
-    musteri = BankMusterisi("Can", "Öztürk", 40000)
-    musteri.bakiye_sorgula()
+    # 1. Simülasyon için iki farklı müşteri oluşturuyoruz
+    gonderen = BankaMusterisi("Can", "Öztürk", 40000)
+    alici = BankaMusterisi("Merve", "Yılmaz", 30000)
     
-    # 1. Başvuru: Skor 1000 olduğu için RED yiyecek
-    musteri.kredi_basvurusu_yap(50000)
+    # 2. Can hesabına başlangıç parası yatırıyor
+    gonderen.para_yatir(5000)
     
-    # Skor yükseltme işlemleri
-    musteri.para_yatir(15000)
-    musteri.para_yatir(20000)
+    # 3. Can, Merve'ye 2000 TL transfer ediyor (Başarılı olması lazım)
+    gonderen.para_gonder(alici, 2000)
     
-    # 2. Başvuru: Skor 1030 olduğu için hala RED yiyecek (1100 olması lazım)
-    musteri.kredi_basvurusu_yap(120000)
+    # 4. Can, Merve'ye bir kez daha 4000 TL göndermeyi deniyor (Bakiyesi yetmediği için RED yiyecek)
+    gonderen.para_gonder(alici, 4000)
