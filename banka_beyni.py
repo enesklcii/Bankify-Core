@@ -12,6 +12,8 @@ class BankaMusterisi:
         self.pin_kodu = str(pin_kodu)
         self.bloke_durumu = False
         self.kalan_hak = 3
+        self.kart_limiti = aylik_gelir * 2  
+        self.kart_borcu = 0.0
 
     def log_yaz(self, mesaj):
         su_an = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
@@ -21,7 +23,6 @@ class BankaMusterisi:
     def giris_yap(self, girilen_pin):
         if self.bloke_durumu:
             return "BLOKE", "Hesabınız bloke edilmiştir!"
-            
         if str(girilen_pin) == self.pin_kodu:
             self.kalan_hak = 3
             self.log_yaz(f"GİRİŞ: {self.isim} {self.soyisim} sisteme girdi.")
@@ -42,12 +43,12 @@ class BankaMusterisi:
             return f"{miktar} TL başarıyla yatırıldı. Güncel bakiye: {self.bakiye} TL"
         return "Geçersiz miktar!"
 
-    # EKSİK OLAN KREDİ FONKSİYONUNU GERİ EKLEDİK
     def kredi_basvurusu_yap(self, talep_edilen_kredi):
         maksimum_kredi_limiti = self.aylik_gelir * 10
         if self.kredi_skoru < 1100:
             self.log_yaz(f"KREDİ RED: {self.isim} ({self.hesap_no}) - Skor Yetersiz ({self.kredi_skoru}).")
             return False
+        # HATA BURADA KESİN OLARAK DÜZELTİLDİ: 'maksimum_kredi_limiti' yapıldı!
         elif talep_edilen_kredi > maksimum_kredi_limiti:
             self.log_yaz(f"KREDİ RED: {self.isim} ({self.hesap_no}) - Gelir Yetersiz.")
             return False
@@ -57,7 +58,6 @@ class BankaMusterisi:
             self.log_yaz(f"KREDİ ONAY: {self.isim} ({self.hesap_no}) {talep_edilen_kredi} TL kredi çekti.")
             return True
 
-    # EKSİK OLAN HAVALE FONKSİYONUNU GERİ EKLEDİK
     def para_gonder(self, alici_musteri, miktar):
         if miktar <= 0:
             return False
@@ -69,3 +69,27 @@ class BankaMusterisi:
             alici_musteri.bakiye += miktar
             self.log_yaz(f"TRANSFER: {self.isim} ({self.hesap_no}) -> {alici_musteri.isim} ({alici_musteri.hesap_no}) hesabına {miktar} TL yolladı.")
             return True
+
+    def kartla_harca(self, miktar):
+        kalan_limit = self.kart_limiti - self.kart_borcu
+        if miktar <= 0:
+            return "GEÇERSİZ", "Miktar geçersiz!"
+        if miktar > kalan_limit:
+            return "YETERSİZ", "Kart limiti yetersiz!"
+        self.kart_borcu += miktar
+        self.kredi_skoru -= 5 
+        self.log_yaz(f"KART HARCAMA: {self.isim} kartından {miktar} TL harcadı. Güncel Borç: {self.kart_borcu} TL.")
+        return "BAŞARILI", f"{miktar} TL harcama yapıldı."
+
+    def kart_borcu_ode(self, miktar):
+        if miktar <= 0:
+            return "GEÇERSİZ", "Miktar geçersiz!"
+        if miktar > self.bakiye:
+            return "YETERSİZ_BAKİYE", "Hesap bakiyeniz yetersiz!"
+        if miktar > self.kart_borcu:
+            return "FAZLA_MİKTAR", "Borcunuzdan fazlasını ödeyemezsiniz!"
+        self.bakiye -= miktar
+        self.kart_borcu -= miktar
+        self.kredi_skoru += 20 
+        self.log_yaz(f"KART ÖDEME: {self.isim} kart borcunun {miktar} TL'sini ödedi.")
+        return "BAŞARILI", f"{miktar} TL borç ödendi."

@@ -32,3 +32,35 @@
 [28-10-2026 18:34:56] YATIRMA: Can hesabına 1000000.0 TL yatırdı.
 [28-10-2026 18:35:03] KREDİ RED: Can (576731) - Skor Yetersiz (1015).
 [28-10-2026 18:35:09] TRANSFER: Can (576731) -> Merve (666987) hesabına 145.0 TL yolladı.
+[28-10-2026 19:03:05] GİRİŞ: Can Öztürk sisteme girdi.
+[28-10-2026 19:03:20] YATIRMA: Can hesabına 15.0 TL yatırdı.
+[28-10-2026 19:03:43] TRANSFER HATA: Can yetersiz bakiye nedeniyle 25.0 TL gönderemedi.
+[28-10-2026 19:03:54] YATIRMA: Can hesabına 16.0 TL yatırdı.
+[28-10-2026 19:03:59] TRANSFER: Can (993432) -> Merve (633297) hesabına 25.0 TL yolladı.
+[28-10-2026 19:04:08] KREDİ RED: Can (993432) - Skor Yetersiz (1030).
+[28-10-2026 19:04:19] YATIRMA: Can hesabına 100000.0 TL yatırdı.
+[28-10-2026 19:04:25] KREDİ RED: Can (993432) - Skor Yetersiz (1045).
+[28-10-2026 19:04:37] YATIRMA: Can hesabına 100000.0 TL yatırdı.
+[28-10-2026 19:04:44] KREDİ RED: Can (993432) - Skor Yetersiz (1060).
+[28-10-2026 19:04:49] YATIRMA: Can hesabına 100000000.0 TL yatırdı.
+[28-10-2026 19:04:55] KREDİ RED: Can (993432) - Skor Yetersiz (1075).
+[28-10-2026 19:05:08] KART HARCAMA: Can kartından 15.0 TL harcadı. Güncel Borç: 15.0 TL.
+[28-10-2026 19:05:21] KART ÖDEME: Can kart borcunun 13.0 TL'sini ödedi.
+[28-10-2026 19:07:09] GİRİŞ: Can Öztürk sisteme girdi.
+[28-10-2026 19:07:17] YATIRMA: Can hesabına 10000.0 TL yatırdı.
+[28-10-2026 19:07:23] KREDİ RED: Can (288479) - Skor Yetersiz (1015).
+[28-10-2026 19:07:31] TRANSFER: Can (288479) -> Merve (248720) hesabına 15.0 TL yolladı.
+[28-10-2026 19:07:38] KART HARCAMA: Can kartından 150.0 TL harcadı. Güncel Borç: 150.0 TL.
+[28-10-2026 19:07:43] KART ÖDEME: Can kart borcunun 120.0 TL'sini ödedi.
+[28-10-2026 19:07:55] KREDİ RED: Can (288479) - Skor Yetersiz (1030).
+[28-10-2026 19:08:00] KREDİ RED: Can (288479) - Skor Yetersiz (1030).
+[28-10-2026 19:09:09] GİRİŞ: Can Öztürk sisteme girdi.
+[28-10-2026 19:09:21] YATIRMA: Can hesabına 10.0 TL yatırdı.
+[28-10-2026 19:09:30] YATIRMA: Can hesabına 10.0 TL yatırdı.
+[28-10-2026 19:09:34] YATIRMA: Can hesabına 10.0 TL yatırdı.
+[28-10-2026 19:09:37] YATIRMA: Can hesabına 10.0 TL yatırdı.
+[28-10-2026 19:09:39] YATIRMA: Can hesabına 10.0 TL yatırdı.
+[28-10-2026 19:09:42] YATIRMA: Can hesabına 10.0 TL yatırdı.
+[28-10-2026 19:09:44] YATIRMA: Can hesabına 10.0 TL yatırdı.
+[28-10-2026 19:09:48] YATIRMA: Can hesabına 10.0 TL yatırdı.
+[28-10-2026 19:09:54] KREDİ ONAY: Can (126557) 1100.0 TL kredi çekti.
