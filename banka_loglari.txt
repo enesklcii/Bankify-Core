@@ -2,3 +2,7 @@
 [28-10-2026 18:18:42] KREDİ RED: Can Öztürk (646730), 80000 TL kredi talep etti. SEBEP: Yetersiz Kredi Skoru (1015).
 [28-10-2026 18:18:42] TRANSFER: Can (646730) kullanıcısı, Merve (380182) kullanıcısına 2000 TL transfer etti.
 [28-10-2026 18:18:42] TRANSFER HATA: Can -> Merve hesabına 4000 TL göndermek istedi ama bakiyesi yetersizdi.
+[28-10-2026 18:22:20] GİRİŞ BAŞARILI: Can Öztürk (808518) sisteme girdi.
+[28-10-2026 18:22:20] NAKİT YATIRMA: Can Öztürk (808518) hesabına 25000 TL yatırdı.
+[28-10-2026 18:22:20] KREDİ RED: Can (808518) - Skor Yetersiz (1015).
+[28-10-2026 18:22:20] TRANSFER: Can (808518) -> Merve (497079) hesabına 15000 TL yolladı.
