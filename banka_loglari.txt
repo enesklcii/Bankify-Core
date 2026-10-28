@@ -6,3 +6,6 @@
 [28-10-2026 18:22:20] NAKİT YATIRMA: Can Öztürk (808518) hesabına 25000 TL yatırdı.
 [28-10-2026 18:22:20] KREDİ RED: Can (808518) - Skor Yetersiz (1015).
 [28-10-2026 18:22:20] TRANSFER: Can (808518) -> Merve (497079) hesabına 15000 TL yolladı.
+[28-10-2026 18:26:11] GİRİŞ: Can Öztürk sisteme girdi.
+[28-10-2026 18:26:23] YATIRMA: Can hesabına 100000.0 TL yatırdı.
+[28-10-2026 18:26:31] YATIRMA: Can hesabına 10000.0 TL yatırdı.
