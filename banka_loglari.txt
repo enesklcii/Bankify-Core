@@ -9,3 +9,26 @@
 [28-10-2026 18:26:11] GİRİŞ: Can Öztürk sisteme girdi.
 [28-10-2026 18:26:23] YATIRMA: Can hesabına 100000.0 TL yatırdı.
 [28-10-2026 18:26:31] YATIRMA: Can hesabına 10000.0 TL yatırdı.
+[28-10-2026 18:28:59] GİRİŞ: Can Öztürk sisteme girdi.
+[28-10-2026 18:29:06] YATIRMA: Can hesabına 12.0 TL yatırdı.
+[28-10-2026 18:30:11] GİRİŞ: Can Öztürk sisteme girdi.
+[28-10-2026 18:30:39] YATIRMA: Can hesabına 1200.0 TL yatırdı.
+[28-10-2026 18:32:28] GİRİŞ: Can Öztürk sisteme girdi.
+[28-10-2026 18:32:33] YATIRMA: Can hesabına 12.0 TL yatırdı.
+[28-10-2026 18:32:38] KREDİ RED: Can (619894) - Skor Yetersiz (1015).
+[28-10-2026 18:32:47] TRANSFER HATA: Can yetersiz bakiye nedeniyle 1126.0 TL gönderemedi.
+[28-10-2026 18:33:17] GİRİŞ: Can Öztürk sisteme girdi.
+[28-10-2026 18:33:22] YATIRMA: Can hesabına 12.0 TL yatırdı.
+[28-10-2026 18:33:27] KREDİ RED: Can (888573) - Skor Yetersiz (1015).
+[28-10-2026 18:33:35] YATIRMA: Can hesabına 12.0 TL yatırdı.
+[28-10-2026 18:33:42] KREDİ RED: Can (888573) - Skor Yetersiz (1030).
+[28-10-2026 18:33:47] YATIRMA: Can hesabına 1200.0 TL yatırdı.
+[28-10-2026 18:33:52] KREDİ RED: Can (888573) - Skor Yetersiz (1045).
+[28-10-2026 18:33:59] KREDİ RED: Can (888573) - Skor Yetersiz (1045).
+[28-10-2026 18:34:09] TRANSFER: Can (888573) -> Merve (224847) hesabına 12.0 TL yolladı.
+[28-10-2026 18:34:16] YATIRMA: Can hesabına 10000.0 TL yatırdı.
+[28-10-2026 18:34:22] KREDİ RED: Can (888573) - Skor Yetersiz (1060).
+[28-10-2026 18:34:49] GİRİŞ: Can Öztürk sisteme girdi.
+[28-10-2026 18:34:56] YATIRMA: Can hesabına 1000000.0 TL yatırdı.
+[28-10-2026 18:35:03] KREDİ RED: Can (576731) - Skor Yetersiz (1015).
+[28-10-2026 18:35:09] TRANSFER: Can (576731) -> Merve (666987) hesabına 145.0 TL yolladı.

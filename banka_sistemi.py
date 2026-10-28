@@ -40,5 +40,32 @@ class BankaMusterisi:
             self.kredi_skoru += 15
             self.log_yaz(f"YATIRMA: {self.isim} hesabına {miktar} TL yatırdı.")
             return f"{miktar} TL başarıyla yatırıldı. Güncel bakiye: {self.bakiye} TL"
-            
         return "Geçersiz miktar!"
+
+    # EKSİK OLAN KREDİ FONKSİYONUNU GERİ EKLEDİK
+    def kredi_basvurusu_yap(self, talep_edilen_kredi):
+        maksimum_kredi_limiti = self.aylik_gelir * 10
+        if self.kredi_skoru < 1100:
+            self.log_yaz(f"KREDİ RED: {self.isim} ({self.hesap_no}) - Skor Yetersiz ({self.kredi_skoru}).")
+            return False
+        elif talep_edilen_kredi > maksimum_kredi_limiti:
+            self.log_yaz(f"KREDİ RED: {self.isim} ({self.hesap_no}) - Gelir Yetersiz.")
+            return False
+        else:
+            self.bakiye += talep_edilen_kredi
+            self.kredi_skoru -= 50
+            self.log_yaz(f"KREDİ ONAY: {self.isim} ({self.hesap_no}) {talep_edilen_kredi} TL kredi çekti.")
+            return True
+
+    # EKSİK OLAN HAVALE FONKSİYONUNU GERİ EKLEDİK
+    def para_gonder(self, alici_musteri, miktar):
+        if miktar <= 0:
+            return False
+        elif self.bakiye < miktar:
+            self.log_yaz(f"TRANSFER HATA: {self.isim} yetersiz bakiye nedeniyle {miktar} TL gönderemedi.")
+            return False
+        else:
+            self.bakiye -= miktar
+            alici_musteri.bakiye += miktar
+            self.log_yaz(f"TRANSFER: {self.isim} ({self.hesap_no}) -> {alici_musteri.isim} ({alici_musteri.hesap_no}) hesabına {miktar} TL yolladı.")
+            return True
